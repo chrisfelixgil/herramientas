@@ -3,6 +3,8 @@
 *.log
 *.pyc
 *.swp
+*.swo
+*~
 .DS_Store
 .atom/
 .build/
@@ -12,36 +14,55 @@
 .swiftpm/
 migrate_working_dir/
 
-# IntelliJ related
+# Windows / OneDrive
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.stackdump
+
+# IntelliJ / Android Studio
 *.iml
 *.ipr
 *.iws
 .idea/
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
+# VS Code (descomenta si no quieres versionar la configuración del equipo)
 #.vscode/
 
-# Flutter/Dart/Pub related
+# Cursor IDE
+.cursor/
+*.cursorrules
+
+# Flutter / Dart / Pub
 **/doc/api/
 **/ios/Flutter/.last_build_id
 .dart_tool/
+.flutter-plugins
 .flutter-plugins-dependencies
+.packages
 .pub-cache/
 .pub/
 /build/
 /coverage/
 
-# Symbolication related
+# Symbolication
 app.*.symbols
 
-# Obfuscation related
+# Obfuscation
 app.*.map.json
 
-# Android Studio will place build artifacts here
+# Android build outputs (ver también android/.gitignore)
 /android/app/debug
 /android/app/profile
 /android/app/release
 
-*.cursorrules
+# Variables de entorno y secretos locales
+.env
+.env.*
+!.env.example
+
+# Credenciales Android (también cubiertas en android/.gitignore)
+**/key.properties
+**/*.keystore
+**/*.jks
