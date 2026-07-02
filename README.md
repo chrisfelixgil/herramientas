@@ -1,14 +1,14 @@
 <div align="center">
 
-<img width="100%" alt="RickVerse — portada Rick and Morty" src="assets/images/rick-y-morty_portada2.jpg" />
+<img width="100%" alt="Caja de Herramientas — portada" src="assets/images/toolbox.png" />
 
-<h1>RickVerse</h1>
+<h1>Caja de Herramientas</h1>
 
-<p><strong>RickVerse — Aplicación móvil dedicada a la serie Rick and Morty.</strong></p>
+<p><strong>Aplicación móvil con utilidades que consumen APIs públicas.</strong></p>
 
 <p>
 <img src="https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white" alt="Flutter 3.x">
-<img src="https://img.shields.io/badge/Dart-3.x-0175C2?logo=dart&logoColor=white" alt="Dart 3.x">
+<img src="https://img.shields.io/badge/Dart-3.12-0175C2?logo=dart&logoColor=white" alt="Dart 3.12">
 <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
 <img src="https://img.shields.io/badge/platform-Android%20%7C%20Web%20%7C%20Windows-lightgrey" alt="Platform">
 </p>
@@ -19,7 +19,7 @@
 
 </div>
 
-Aplicación móvil dedicada a la serie **Rick and Morty**, desarrollada con **Flutter** como proyecto académico de la materia **Introducción al Desarrollo de Aplicaciones Móviles**.
+Aplicación desarrollada con **Flutter** como proyecto académico de la materia **Introducción al Desarrollo de Aplicaciones Móviles**. Reúne varios módulos independientes que consultan servicios web públicos desde una interfaz moderna y sencilla.
 
 ---
 
@@ -36,75 +36,52 @@ Aplicación móvil dedicada a la serie **Rick and Morty**, desarrollada con **Fl
 
 ## Descripción del proyecto
 
-Desarrollen una aplicación móvil dedicada a una serie, película o canal de YouTube. Asegúrense de que su aplicación incluya las siguientes vistas:
+**Caja de Herramientas** es una app multiplataforma que centraliza utilidades basadas en APIs REST. Desde la pantalla principal se accede a cada módulo mediante tarjetas de navegación.
 
-### Portada
+Referencia de ejemplo del curso: [adamix.net/tareas/itla2](https://adamix.net/tareas/itla2/)
 
-La pantalla de inicio incluye un **carrusel (slider)** con imágenes de la serie, el logo de RickVerse superpuesto y un menú de acceso rápido a las demás secciones de la app.
+### Inicio
 
+Pantalla principal con imagen de portada, mensaje de bienvenida y cuadrícula de módulos. El diseño es **responsive** y adapta el número de columnas según el ancho disponible.
 
-### Personajes
+### Predicción de género
 
-Se consultan personajes desde la **Rick and Morty API**. La lista muestra al menos tres personajes con nombre, estado y especie. Al seleccionar uno se abre la vista de detalle con foto, estado, especie, tipo, género, origen, ubicación y cantidad de episodios.
+Consulta el género probable de un nombre usando [Genderize.io](https://genderize.io/). Muestra nombre, resultado, probabilidad y cantidad de registros analizados.
 
-### Momentos
+### Predicción de edad
 
-Tres momentos favoritos con imagen y título. En el detalle se muestra la descripción completa y un **reproductor de YouTube integrado** (`youtube_player_iframe`) que reproduce el video dentro de la app.
+Estima la edad a partir de un nombre con [Agify.io](https://agify.io/). Clasifica al participante como **joven** (0–25), **adulto** (26–59) o **anciano** (60+) e ilustra el resultado con imágenes locales (`young.png`, `adult.webp`, `elder.png`).
+
+### Universidades por país
+
+Busca universidades escribiendo el país **en inglés** (por ejemplo: `Dominican Republic`, `Mexico`, `Spain`). Consume la API de [Universities Hipolabs](http://universities.hipolabs.com/) y muestra nombre, país, dominio y enlace web.
+
+### Clima en RD
+
+Muestra el clima actual de Santo Domingo usando [Open-Meteo](https://open-meteo.com/). Incluye temperatura, sensación térmica, descripción del clima y mensaje orientativo al usuario.
+
+### Pokémon
+
+Permite buscar un Pokémon por nombre en [PokéAPI](https://pokeapi.co/). Muestra imagen, tipos, peso, altura y reproduce su cry con `audioplayers`.
+
+### Noticias (Remolacha.net)
+
+Obtiene las últimas publicaciones de [Remolacha.net](https://remolacha.net/) mediante la **WordPress REST API** (`/wp-json/wp/v2/posts`). Presenta título, extracto y enlace para abrir cada noticia en el navegador.
 
 ### Acerca de
 
-Vista con imagen de portada, descripción de la serie, tipo de obra, **creadores** (Justin Roiland y Dan Harmon), **cantidad de temporadas**, año de estreno y tema principal.
-
-### Juega Conmigo
-
-Mini-juego de **adivinanza de personajes** (estilo ahorcado). Se muestra la imagen de un personaje aleatorio de la API, pistas de especie/género e intentos limitados. Incluye teclado de letras, marcador de aciertos/fallos y racha.
-
-Referencia de ejemplo: [adamix.net/tareas/itla2](https://adamix.net/tareas/itla2/)
-
-### Contrátame
-
-Tarjeta de perfil con **foto**, nombre, matrícula y enlaces de contacto (correo, teléfono, GitHub y LinkedIn).
-
----
-
-## Capturas de pantalla
-
-Capturas tomadas desde la app en dispositivo móvil.
-
-| Portada | Personajes |
-|:------:|:---------:|
-| ![Portada](docs/screenshots/homePage.jpg) | ![Personajes](docs/screenshots/personajes.jpg) |
-| *Pantalla de inicio con carrusel* | *Listado de personajes* |
-
-| Detalle personaje | Momentos |
-|:----------------:|:--------:|
-| ![Detalle personaje](docs/screenshots/rickSanchez_personaje.jpg) | ![Momentos](docs/screenshots/momentos.jpg) |
-| *Foto y datos del personaje* | *Momentos favoritos* |
-
-| Detalle momento | Juega conmigo |
-|:--------------:|:-------------:|
-| ![Detalle momento](docs/screenshots/pickleRick.jpg) | ![Juego](docs/screenshots/juego1.jpg) |
-| *Detalle con video integrado* | *Mini-juego de adivinanza* |
-
-| Acerca de | Contrátame |
-|:--------:|:---------:|
-| ![Acerca de](docs/screenshots/acercaDe.jpg) | ![Contrátame](docs/screenshots/contratame.jpg) |
-| *Información de la serie* | *Datos de contacto y foto* |
-
-| Juego — intentos | Juego — resultado |
-|:---------------:|:----------------:|
-| ![Juego intentos](docs/screenshots/juego2.jpg) | ![Juego resultado](docs/screenshots/juego3.jpg) |
-| *Partida en curso* | *Fin de ronda* |
+Perfil del desarrollador con foto, matrícula y enlaces de contacto (correo, GitHub y LinkedIn) mediante `url_launcher`.
 
 ---
 
 ## Funcionalidades principales
 
-- Navegación inferior con **MainShell** (Inicio, Juega conmigo, Acerca de, Perfil).
-- Navigator anidado en la pestaña Inicio para mantener la barra al navegar a Personajes y Momentos.
-- Diseño **responsive** para móvil, tablet y web (`Responsive`, `ResponsiveContent`).
-- Tema oscuro con paleta inspirada en Rick and Morty.
-- Consumo de datos desde la [Rick and Morty API](https://rickandmortyapi.com/).
+- Navegación por rutas nombradas desde `MaterialApp`.
+- Consumo centralizado de APIs en `ApiService` con manejo de errores, timeout y mensajes amigables.
+- Interfaz con **Material 3** y widgets reutilizables (`FeatureCard`, `ResultCard`).
+- Soporte para **Android**, **Web** y **Windows**.
+- Ícono de la aplicación generado desde `assets/images/perfil.jpg`.
+- Prueba de widget básica en `test/widget_test.dart`.
 
 ---
 
@@ -112,28 +89,42 @@ Capturas tomadas desde la app en dispositivo móvil.
 
 ```text
 lib/
-├── core/
-│   ├── constants/       # Colores, assets, API, YouTube
-│   ├── routes/          # Rutas nombradas
-│   ├── theme/           # Tema Material 3
-│   ├── utils/           # Utilidades responsive
-│   └── widgets/         # Reproductor YouTube, mensajes de error
-├── data/
-│   ├── models/          # CharacterModel, MomentModel
-│   └── services/        # RickAndMortyService
-├── features/
-│   ├── about/           # Acerca de
-│   ├── characters/      # Personajes y detalle
-│   ├── game/            # Juega conmigo
-│   ├── hire_me/         # Contrátame
-│   ├── home/            # Portada y MainShell
-│   └── moments/         # Momentos y detalle
-├── app.dart
-└── main.dart
+├── main.dart                 # Punto de entrada e inicialización de locale
+├── theme/
+│   └── app_theme.dart        # Tema Material 3
+├── models/                   # Modelos de datos (Age, Gender, Weather, etc.)
+├── services/
+│   └── api_service.dart      # Cliente HTTP para todas las APIs
+├── screens/                  # Pantallas de cada módulo
+│   ├── home_screen.dart
+│   ├── gender_screen.dart
+│   ├── age_screen.dart
+│   ├── universities_screen.dart
+│   ├── weather_screen.dart
+│   ├── pokemon_screen.dart
+│   ├── wordpress_news_screen.dart
+│   └── about_screen.dart
+└── widgets/
+    ├── feature_card.dart
+    └── result_card.dart
 
-assets/images/           # Imágenes locales (logo, momentos, perfil)
-docs/screenshots/        # Capturas de pantalla para el README
+assets/images/                # Imágenes locales (portada, perfil, edades, noticias)
+test/
+└── widget_test.dart
 ```
+
+---
+
+## APIs utilizadas
+
+| Módulo | Servicio | Endpoint principal |
+|--------|----------|-------------------|
+| Género | Genderize.io | `https://api.genderize.io/` |
+| Edad | Agify.io | `https://api.agify.io/` |
+| Universidades | Universities Hipolabs | `http://universities.hipolabs.com/search` |
+| Clima RD | Open-Meteo | `https://api.open-meteo.com/v1/forecast` |
+| Pokémon | PokéAPI | `https://pokeapi.co/api/v2/pokemon/{nombre}` |
+| Noticias | Remolacha.net (WordPress) | `https://remolacha.net/wp-json/wp/v2/posts` |
 
 ---
 
@@ -148,9 +139,11 @@ docs/screenshots/        # Capturas de pantalla para el README
 | Requisito | Descripción |
 |-----------|-------------|
 | **Flutter SDK** | Versión 3.x — [Instalación](https://docs.flutter.dev/get-started/install) |
-| **Dart** | 3.x con null safety |
-| **Plataforma** | Emulador/dispositivo Android, navegador Chrome o escritorio Windows |
-| **Red** | Conexión a internet para la Rick and Morty API y videos de YouTube |
+| **Dart** | 3.12+ con null safety |
+| **Plataforma** | Emulador/dispositivo Android, navegador Chrome/Edge o escritorio Windows |
+| **Red** | Conexión a internet para consumir las APIs externas |
+
+> **Nota sobre Web:** algunas APIs pueden fallar en el navegador por restricciones **CORS** o límites de uso. Para una experiencia completa se recomienda ejecutar con `flutter run -d windows` o en un dispositivo Android.
 
 ---
 
@@ -162,11 +155,20 @@ docs/screenshots/        # Capturas de pantalla para el README
 flutter pub get
 ```
 
-### 2. Ejecutar la aplicación
+### 2. Generar íconos de la app (opcional)
 
 ```bash
-# Dispositivo/emulador conectado o Chrome
+dart run flutter_launcher_icons
+```
+
+### 3. Ejecutar la aplicación
+
+```bash
+# Seleccionar dispositivo disponible
 flutter run
+
+# Windows (recomendado para APIs)
+flutter run -d windows
 
 # Web
 flutter run -d chrome
@@ -175,7 +177,7 @@ flutter run -d chrome
 flutter run -d android
 ```
 
-### 3. Ejecutar pruebas y análisis
+### 4. Ejecutar pruebas y análisis
 
 ```bash
 flutter analyze
@@ -187,16 +189,18 @@ flutter test
 ## Tecnologías utilizadas
 
 <p align="center">
-  <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=flutter,dart,windows,vscode,git,github,youtube&theme=dark&perline=8" alt="Tecnologías del proyecto" /></a>
+  <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=flutter,dart,windows,vscode,git,github&theme=dark&perline=8" alt="Tecnologías del proyecto" /></a>
 </p>
 
-| Tecnología | Uso | Icono |
-|-----------|-----|-------|
-| **Flutter / Dart** | Framework y lenguaje de la aplicación | <img src="https://skillicons.dev/icons?i=flutter,dart&theme=dark" height="28" alt="Flutter Dart" /> |
-| **Material 3** | Interfaz de usuario | <img src="https://skillicons.dev/icons?i=androidstudio&theme=dark" height="28" alt="Android Studio" /> |
-| **http** | Consumo de [Rick and Morty API](https://rickandmortyapi.com/) | <img src="https://skillicons.dev/icons?i=postman&theme=dark" height="28" alt="API REST" /> |
-| **youtube_player_iframe** | Reproducción de videos dentro de la app | <img src="https://skillicons.dev/icons?i=youtube&theme=dark" height="28" alt="YouTube" /> |
-| **url_launcher** | Enlaces de contacto en Contrátame | <img src="https://skillicons.dev/icons?i=chrome&theme=dark" height="28" alt="Enlaces web" /> |
+| Tecnología | Uso |
+|-----------|-----|
+| **Flutter / Dart** | Framework y lenguaje de la aplicación |
+| **Material 3** | Interfaz de usuario |
+| **http** | Consumo de APIs REST |
+| **url_launcher** | Abrir enlaces web y correo |
+| **audioplayers** | Reproducir el cry del Pokémon |
+| **intl** | Formato de fechas en español (módulo de clima) |
+| **flutter_launcher_icons** | Generación del ícono desde `perfil.jpg` |
 
 > Iconos generados con [Skill Icons](https://skillicons.dev/).
 
@@ -206,45 +210,18 @@ flutter test
 
 - **Nombre:** Christian Gil
 - **Matrícula:** 2012-1036
+- **Correo:** 20121036@itla.edu.do
+- **GitHub:** [chrisfelixgil](https://github.com/chrisfelixgil)
+- **LinkedIn:** [christianfgilc](https://www.linkedin.com/in/christianfgilc/)
 
 ---
 
 ## Créditos
 
-<div align="center">
-
-<img src="assets/images/rickverse_logo_transparent.png" width="200" alt="Logo RickVerse" />
-
-<br /><br />
-
-<img src="assets/images/rick-y-morty-fanart.jpg" width="720" alt="Arte de Rick and Morty usado en el carrusel de la app" />
-
-<p><em>Imagen del carrusel de portada — RickVerse</em></p>
-
-</div>
-
-Proyecto desarrollado como parte de la materia **Introducción al Desarrollo de Aplicaciones Móviles**, impartida por el profesor **Amadis Suárez Genao**.
-
-Consulta el [Aviso legal (NOTICE)](#aviso-legal-notice) para el alcance de la licencia y el uso de contenido de terceros.
+Proyecto desarrollado como parte de la materia **Introducción al Desarrollo de Aplicaciones Móviles**, impartida por el profesor **Amadis Suárez Genao** en el **ITLA**.
 
 ---
 
 ## Licencia
 
-El **código fuente** de este repositorio se distribuye bajo la [licencia MIT](LICENSE).
-
----
-
-## Aviso legal (NOTICE)
-
-> El código fuente se distribuye bajo MIT. Las imágenes, marcas y contenido audiovisual de **Rick and Morty** pertenecen a sus respectivos titulares y se usan **únicamente con fines educativos**.
-
-| Contenido | Titular / origen | Alcance de la licencia MIT |
-|-----------|------------------|----------------------------|
-| Código Flutter (`lib/`, tests, configuración) | Christian Gil | Cubierto por MIT |
-| Imágenes locales (`assets/images/`) | Varios autores / fanart | **No** cubierto — uso académico |
-| Personajes e imágenes desde API | [Rick and Morty API](https://rickandmortyapi.com/) | **No** cubierto — datos de terceros |
-| Videos embebidos | YouTube / titulares del contenido | **No** cubierto — reproducción in-app con fines educativos |
-| Marca **Rick and Morty** | Adult Swim / Warner Bros. Discovery | **No** cubierto — marca registrada de terceros |
-
-Esta aplicación es un **proyecto académico sin fines comerciales**, desarrollado para la materia **Introducción al Desarrollo de Aplicaciones Móviles** (ITLA). No está afiliada, aprobada ni patrocinada por Adult Swim, Warner Bros. ni por los creadores oficiales de la serie.
+El código fuente de este repositorio se distribuye bajo la [licencia MIT](LICENSE).
